@@ -3,7 +3,7 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 
-export 'diagram.dart';
+export 'index.dart';
 
 
 class FlutterTwice {
