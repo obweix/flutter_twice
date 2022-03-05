@@ -28,19 +28,28 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      onGenerateRoute: Routes.onGenerateRoute,
         home: Scaffold(
       appBar: AppBar(title: Text("Flutter Twice")),
       body: Builder(builder: (context) {
         return Column(children: [
           Expanded(
             child: ListView(children: [
-              NavigateListTile(
-                title: "DragOpenDrawer",
-                builder: () => PageDragOpenDrawer(),
+              ListTile(
+                title: Text("DragOpenDrawer"),
+                onTap: () => Navigator.of(context).pushNamed(Routes.pageDragOpenDrawer),
               ),
-              NavigateListTile(
-                title: "PageExpandedListTile",
-                builder: () => PageExpandedListTile(),
+              ListTile(
+                title: Text("PageExpandedListTile"),
+                onTap: () =>  Navigator.of(context).pushNamed(Routes.pageExpandedListTile),
+              ),
+              ListTile(
+                title: Text("PageDiagram"),
+                onTap: () =>  Navigator.of(context).pushNamed(Routes.pageDiagram),
+              ),
+              ListTile(
+                title: Text("PageNetworkStatusNotifier"),
+                onTap: () =>  Navigator.of(context).pushNamed(Routes.pageNetworkStatusNotifier),
               ),
             ]),
           ),
@@ -51,11 +60,11 @@ class _MyAppState extends State<MyApp> {
 }
 
 class NavigateListTile extends StatelessWidget {
-  const NavigateListTile({required this.builder, required this.title, Key? key})
+  const NavigateListTile({required this.onNavigate, required this.title, Key? key})
       : super(key: key);
 
   final String title;
-  final Function()? builder;
+  final Function() onNavigate;
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +75,7 @@ class NavigateListTile extends StatelessWidget {
       ),
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-          return builder?.call();
+          return onNavigate.call();
         }));
       },
     );

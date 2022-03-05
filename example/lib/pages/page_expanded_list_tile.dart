@@ -1,6 +1,6 @@
 import 'package:flutter_twice/flutter_twice.dart';
 
-import 'index.dart';
+import '../index.dart';
 
 class PageExpandedListTile extends StatefulWidget {
   const PageExpandedListTile({Key? key}) : super(key: key);

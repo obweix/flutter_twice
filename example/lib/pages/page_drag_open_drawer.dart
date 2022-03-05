@@ -1,4 +1,4 @@
-import 'index.dart';
+import '../index.dart';
 import 'package:flutter_twice/drag_open_drawer.dart';
 
 class PageDragOpenDrawer extends StatefulWidget {
