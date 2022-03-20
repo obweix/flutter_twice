@@ -6,6 +6,7 @@ class Routes{
   static const String pageExpandedListTile = "PageExpandedListTile";
   static const String pageDiagram = "PageDiagram";
   static const String pageNetworkStatusNotifier = "PageNetworkStatusNotifier";
+  static const String pageCustomText = "pageCustomText";
 
  static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     switch(settings.name){
@@ -17,6 +18,8 @@ class Routes{
         return MaterialPageRoute(builder: (_)=>PageDiagram());
       case pageNetworkStatusNotifier:
         return MaterialPageRoute(builder: (_)=>PageNetworkStatusNotifier());
+      case pageCustomText:
+        return MaterialPageRoute(builder: (_)=>PageCustomText());
 
       default:
         return MaterialPageRoute(builder: (_)=>Center(child: Text("undefine route name."),),);

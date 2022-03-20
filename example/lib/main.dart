@@ -1,6 +1,8 @@
 import 'dart:math';
 import 'dart:async';
 
+import 'package:flutter/services.dart';
+
 import 'index.dart';
 import 'package:flutter_twice/index.dart';
 
@@ -22,12 +24,13 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    // SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Colors.transparent,));
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
       onGenerateRoute: Routes.onGenerateRoute,
         home: Scaffold(
       appBar: AppBar(title: Text("Flutter Twice")),
@@ -51,6 +54,10 @@ class _MyAppState extends State<MyApp> {
                 title: Text("PageNetworkStatusNotifier"),
                 onTap: () =>  Navigator.of(context).pushNamed(Routes.pageNetworkStatusNotifier),
               ),
+              ListTile(
+                title: Text(Routes.pageCustomText),
+                onTap: () =>  Navigator.of(context).pushNamed(Routes.pageCustomText),
+              ),
             ]),
           ),
         ]);
@@ -59,25 +66,3 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-class NavigateListTile extends StatelessWidget {
-  const NavigateListTile({required this.onNavigate, required this.title, Key? key})
-      : super(key: key);
-
-  final String title;
-  final Function() onNavigate;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(
-        title,
-        style: TextStyle(color: Color(0xFF222222), fontSize: 15),
-      ),
-      onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-          return onNavigate.call();
-        }));
-      },
-    );
-  }
-}
