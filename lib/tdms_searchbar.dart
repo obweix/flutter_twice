@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class TdmsSearchBar<T> extends StatefulWidget implements PreferredSizeWidget {
+class SearchBar<T> extends StatefulWidget implements PreferredSizeWidget {
   /// 从content中查找
   final List<T> contents;
 
@@ -16,7 +16,7 @@ class TdmsSearchBar<T> extends StatefulWidget implements PreferredSizeWidget {
   final Function(List<T> searchResult)? onSearchResult;
 
 
-  const TdmsSearchBar(
+  const SearchBar(
       {Key? key,
       required this.contents,
       required this.compare,
@@ -25,13 +25,13 @@ class TdmsSearchBar<T> extends StatefulWidget implements PreferredSizeWidget {
       : super(key: key);
 
   @override
-  _TdmsSearchBarState<T> createState() => _TdmsSearchBarState<T>();
+  _SearchBarState<T> createState() => _SearchBarState<T>();
 
   @override
   Size get preferredSize => const Size.fromHeight(48.0);
 }
 
-class _TdmsSearchBarState<T> extends State<TdmsSearchBar<T>> {
+class _SearchBarState<T> extends State<SearchBar<T>> {
   TextEditingController _textEditingController = TextEditingController();
   bool _isOffStage = true;
   final double searchBarHeight = 32.0;
