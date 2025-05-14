@@ -32,18 +32,19 @@ class _PageCustomTextState extends State<PageCustomText> {
         ),
         SizedBox(height:20),
         Container(
-          width: double.infinity,
-          height: 200,
+          color: Colors.yellow,
+          width: 300,
+          height: 300,
           child: Marquee(
-            child:Row(
+            orientation: Orientation.landscape,
+            child:Column(
               children: [
-                Image.network("https://c-ssl.duitang.com/uploads/item/201601/15/20160115224508_TfuGA.jpeg"),
-                SizedBox(width:20),
-                Image.network("http://p2.music.126.net/fHyz7zYjnIaUTKoiEkgAbA==/109951164194349109.jpg"),
-                SizedBox(width:20),
-                Image.network("https://hbimg.huabanimg.com/9758e2248a413d3cc0cb3b05c9447ab51ae0b78c979d6c-Ym5Ehm_fw658/format/webp"),
-                SizedBox(width:20),
-                Image.network("https://hbimg.huabanimg.com/db2dbd8d46be21c206c11848125d7c7587e9dafa4b71e-LWeH0F_fw658/format/webp"),
+                Image.network("https://c-ssl.duitang.com/uploads/item/201601/15/20160115224508_TfuGA.jpeg",width: 300,),
+                Image.network("http://p2.music.126.net/fHyz7zYjnIaUTKoiEkgAbA==/109951164194349109.jpg",width: 300,),
+                Image.network("https://hbimg.huabanimg.com/9758e2248a413d3cc0cb3b05c9447ab51ae0b78c979d6c-Ym5Ehm_fw658/format/webp",width: 300,),
+                Image.network("https://hbimg.huabanimg.com/db2dbd8d46be21c206c11848125d7c7587e9dafa4b71e-LWeH0F_fw658/format/webp",width: 300,),
+                Image.network("https://hbimg.huabanimg.com/db2dbd8d46be21c206c11848125d7c7587e9dafa4b71e-LWeH0F_fw658/format/webp",width: 300,),
+                Image.network("https://hbimg.huabanimg.com/db2dbd8d46be21c206c11848125d7c7587e9dafa4b71e-LWeH0F_fw658/format/webp",width: 300,),
               ],
             )
           ),
